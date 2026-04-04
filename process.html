@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishva | Our Process</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .timeline-section { max-width: 800px; margin: 60px auto; padding: 20px; }
+        .timeline-item { display: flex; gap: 30px; margin-bottom: 40px; position: relative; }
+        .timeline-line { position: absolute; left: 24px; top: 0; bottom: -40px; width: 2px; background: rgba(255,255,255,0.1); z-index: -1; }
+        .timeline-item:last-child .timeline-line { display: none; }
+        .timeline-icon { width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0; box-shadow: 0 0 20px rgba(85,110,230,0.4); }
+        .timeline-content { padding: 30px; border-radius: 16px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); flex: 1; }
+        .timeline-content h3 { font-family: var(--font-heading); margin-bottom: 10px; color: white; font-size: 1.4rem; }
+        .timeline-content p { color: var(--text-secondary); line-height: 1.6; }
+    </style>
+</head>
+<body class="dark-theme">
+    <div id="lights" class="ambient-lights">
+        <div class="light-orb orb-1"></div>
+        <div class="light-orb orb-3"></div>
+    </div>
+    
+    <nav class="navbar glass" style="position: sticky; z-index: 100;">
+        <div class="logo"><a href="index.html" style="text-decoration:none;"><span class="logo-text">Ishva</span></a></div>
+        <div class="nav-links" style="display: flex; align-items: center; gap: 30px;">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html">About Us</a>
+            <a href="process.html">Process</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html" class="btn btn-primary glow-effect" style="padding: 8px 20px; font-size: 0.85rem;">Get Quote</a>
+        </div>
+    </nav>
+
+    <main>
+        <div style="text-align: center; padding: 60px 20px 20px;">
+            <h1 style="font-family: var(--font-heading); font-size: 3rem; margin-bottom: 10px;">The Ishva Process</h1>
+            <p style="color: var(--text-secondary);">From concept to high-performance launch. Total transparency.</p>
+        </div>
+
+        <section class="timeline-section">
+            <div class="timeline-item">
+                <div class="timeline-line"></div>
+                <div class="timeline-icon"><i data-lucide="calculator"></i></div>
+                <div class="timeline-content glass-panel" data-tilt>
+                    <h3>1. Dynamic Quotation</h3>
+                    <p>Enter our interactive portal to visually generate a highly precise, down-to-the-rupee quotation tailored instantly to your feature selections.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-line"></div>
+                <div class="timeline-icon"><i data-lucide="pen-tool"></i></div>
+                <div class="timeline-content glass-panel" data-tilt>
+                    <h3>2. Architectural Customization</h3>
+                    <p>Once approved, our team deploys cutting-edge Figma workflows to customize color palettes, 3D interactives, and micro-animations exclusively matching your brand identity.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-line"></div>
+                <div class="timeline-icon"><i data-lucide="rocket"></i></div>
+                <div class="timeline-content glass-panel" data-tilt>
+                    <h3>3. Deployment & Launch</h3>
+                    <p>We push your platform into our high-speed hosting nodes globally, executing rigorous SEO caching and mobile optimizations before handing over the admin keys.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

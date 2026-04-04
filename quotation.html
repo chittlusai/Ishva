@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishva | Quotation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dark-theme">
+    <div id="lights" class="ambient-lights">
+        <div class="light-orb orb-1"></div>
+        <div class="light-orb orb-2"></div>
+        <div class="light-orb orb-3"></div>
+    </div>
+    
+    <nav class="navbar glass logged-in" style="position: sticky; z-index: 100;">
+        <div class="logo"><span class="logo-text">Ishva</span></div>
+        
+        <a href="profile.html" class="user-profile" style="position: absolute; right: 20px; text-decoration: none; padding: 0; background: transparent; border: none; z-index: 105;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #1A1A2E, #16213E, #0F3460); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem; font-family: var(--font-heading); box-shadow: 0 0 10px rgba(0,0,0,0.5);">👤</div>
+            <div style="display: none;"><div id="user-name-display">Guest</div></div>
+        </a>
+
+        <div class="nav-links" style="display: flex; align-items: center; gap: 30px;">
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html">About Us</a>
+            <a href="process.html">Process</a>
+            <a href="contact.html">Contact</a>
+            <a href="javascript:void(0)" class="btn btn-secondary logout-trigger" style="padding: 8px 20px; font-size: 0.85rem;" onclick="localStorage.removeItem('ishva_user'); localStorage.removeItem('ishva_phone'); window.location.href='index.html';">Log Out</a>
+            
+            <a href="javascript:void(0)" class="mobile-logout-link logout-trigger" style="display:none; color:#ff4d4d; border-top:1px solid rgba(255,255,255,0.05); text-align:center; padding:20px 0;" onclick="localStorage.removeItem('ishva_user'); localStorage.removeItem('ishva_phone'); window.location.href='index.html';">🔴 Disconnect Session</a>
+        </div>
+    </nav>
+    <main>
+        <section id="quotation" class="quotation-section">
+            <div class="section-badge">Interactive Pricing</div>
+            <h2 class="section-title">Design Your Package</h2>
+            <div class="quotation-container">
+                <div class="quotation-form glass-panel perspective-container">
+                    <div class="steps-wrapper">
+                        <div class="form-step active" id="step-1">
+                            <h3>1. Select Website Type</h3>
+                            <div class="options-grid">
+                                <div class="option-card active" data-type="type" data-value="landing" data-price="3000">
+                                    <i data-lucide="file-text"></i>
+                                    <h4>Single Page</h4>
+                                    <p>High-converting landing page.</p>
+                                </div>
+                                <div class="option-card" data-type="type" data-value="corporate" data-price="6000">
+                                    <i data-lucide="briefcase"></i>
+                                    <h4>Multi-Page</h4>
+                                    <p>Blogs, Image galleries, 3D Interactives.</p>
+                                </div>
+                                <div class="option-card" data-type="type" data-value="ecommerce" data-price="45000">
+                                    <i data-lucide="shopping-cart"></i>
+                                    <h4>E-Commerce</h4>
+                                    <p>Payments, Products, Ranking, and Admin access.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-step" id="step-2">
+                            <h3>2. Add Premium Features</h3>
+                            <div class="options-grid">
+                                <div class="option-card toggle-card" data-type="feature" data-value="seo">
+                                    <i data-lucide="search"></i>
+                                    <h4>SEO Optimization</h4>
+                                    <p>Price adapts to site type</p>
+                                </div>
+                                <div class="option-card toggle-card" data-type="feature" data-value="domain">
+                                    <i data-lucide="globe"></i>
+                                    <h4>Domain</h4>
+                                    <p>Cost varies by domain</p>
+                                </div>
+                                <div class="option-card toggle-card" data-type="feature" data-value="3d">
+                                    <i data-lucide="box"></i>
+                                    <h4>3D Interactions</h4>
+                                    <p>Advanced WebGL & Parallax</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-step" id="step-3">
+                            <h3>3. Design Style Level</h3>
+                            <div class="slider-container">
+                                <input type="range" id="style-slider" min="1" max="3" value="2" class="styled-slider">
+                                <div class="slider-labels">
+                                    <span>Minimalist</span>
+                                    <span>Premium</span>
+                                    <span>Avant-Garde</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-step" id="step-4">
+                            <h3>4. Describe Your Vision</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.9rem;">Tell us about your business and specific customization requirements before checkout.</p>
+                            <div class="input-group">
+                                <textarea id="customization-note" rows="5" placeholder="E.g., We are a boutique coffee shop. We need an aesthetic layout with a dark theme and reservation capabilities..." style="width: 100%; padding: 15px; border-radius: 12px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); color: white; resize: vertical; font-family: var(--font-body); outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='var(--accent-1)'" onblur="this.style.borderColor='var(--border-glass)'"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button class="btn btn-secondary" id="prev-btn" disabled>Back</button>
+                        <button class="btn btn-primary" id="next-btn">Next Step</button>
+                    </div>
+                </div>
+                <div class="pricing-card-wrapper perspective-container">
+                    <div class="pricing-card glass-panel premium-glow" id="quotation-pdf-container">
+                        <div class="print-only-header" style="display: none;">
+                            <h1 style="font-family: var(--font-heading); font-weight: 800; color: #556ee6; margin-bottom: 5px; font-size: 2.5rem;">ISHVA PLATFORM</h1>
+                            <h2 style="font-size: 1.2rem; color: #333; margin-bottom: 20px;">Official Project Quotation</h2>
+                            <div style="display: flex; justify-content: space-between; border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px;">
+                                <p style="color: #666; font-size: 0.9rem; line-height: 1.5;">Generated for:<br><b id="print-user" style="color: #222; font-size: 1.1rem;"></b></p>
+                                <p style="color: #666; font-size: 0.9rem; text-align: right; line-height: 1.5;">Date:<br><b id="print-date" style="color: #222;"></b></p>
+                            </div>
+                        </div>
+                        <div class="watermark-overlay">Generated by Ishva company</div>
+                        <div class="pricing-header">
+                            <h3>Estimated Quote</h3>
+                            <div class="price-display">
+                                <span class="currency">₹</span>
+                                <span class="amount counter" id="total-price">3,000</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-breakdown" id="pricing-breakdown">
+                            <li><span>Single Page</span><span>₹3,000</span></li>
+                        </ul>
+                        <div class="pricing-footer" style="position: relative; z-index: 50;">
+                            <button id="edit-preferences-btn" class="btn btn-secondary w-100" style="margin-bottom: 12px; display: flex; justify-content: center; align-items: center; gap: 8px; cursor: pointer !important; position: relative; z-index: 100;">
+                                <i data-lucide="edit-3" style="width: 18px; height: 18px;"></i> Edit Preferences
+                            </button>
+                            <button class="btn btn-cta glow-effect w-100" id="proceed-checkout-btn" style="margin-bottom: 12px; display: flex; justify-content: center; align-items: center; gap: 8px; cursor: pointer !important; position: relative; z-index: 100;">
+                                <i data-lucide="shopping-cart" style="width: 20px; height: 20px;"></i> Proceed to Checkout
+                            </button>
+                            <button id="download-pdf-btn" class="btn btn-secondary w-100" style="display: flex; justify-content: center; align-items: center; gap: 8px; cursor: pointer !important; position: relative; z-index: 100;">
+                                <i data-lucide="download" style="width: 18px; height: 18px;"></i> Download PDF Quotation
+                            </button>
+                            <p class="terms" style="position: relative; z-index: 50;">Billed per project.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Submission Modal Before Checkout -->
+    <div class="modal-overlay" id="checkout-contact-modal">
+        <div class="modal-content glass-panel" style="max-width: 600px; text-align: left; background: rgba(10, 10, 12, 0.98);">
+            <button class="close-btn" id="close-checkout-contact"><i data-lucide="x"></i></button>
+            <h2 style="font-family: var(--font-heading); margin-bottom: 8px; color: var(--accent-1);">Final Step: Secure Lead Dispatch</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.5;">Review your quotation parameters. Hitting submit will push your Customization Note directly to <b>vanapalligowtham890@gmail.com</b> and route you to the payment gateway.</p>
+            
+            <form id="final-contact-gateway">
+                <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+                    <div class="input-group" style="flex: 1;">
+                        <label style="display: block; margin-bottom: 8px; color: var(--text-secondary); font-size: 0.85rem;">Client Mail</label>
+                        <input type="email" id="final-mail" readonly style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(0,0,0,0.5); border: 1px solid var(--border-glass); color: #888; outline: none; cursor: not-allowed;" />
+                    </div>
+                    <div class="input-group" style="flex: 1;">
+                        <label style="display: block; margin-bottom: 8px; color: var(--text-secondary); font-size: 0.85rem;">Client Phone</label>
+                        <input type="tel" id="final-phone" readonly style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(0,0,0,0.5); border: 1px solid var(--border-glass); color: #888; outline: none; cursor: not-allowed;" />
+                    </div>
+                </div>
+                <div class="input-group" style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; color: var(--accent-2); font-size: 0.85rem;">Total Project Calculation</label>
+                    <input type="text" id="final-price" readonly style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(0,0,0,0.5); border: 1px solid rgba(85,110,230,0.5); color: white; font-weight: bold; font-family: var(--font-heading); outline: none; cursor: not-allowed;" />
+                </div>
+                <div class="input-group" style="margin-bottom: 30px;">
+                    <label style="display: block; margin-bottom: 8px; color: white; font-size: 0.85rem;">Client Requirement (Customizable Note)</label>
+                    <textarea id="final-req" rows="4" style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); color: white; outline: none; resize: vertical; transition: border-color 0.3s;" onfocus="this.style.borderColor='var(--accent-1)'" onblur="this.style.borderColor='var(--border-glass)'" placeholder="Missing requirement details. Please go back to Step 4 to edit."></textarea>
+                </div>
+                <button type="button" id="trigger-final-send-btn" class="btn btn-primary w-100 glow-effect" style="padding: 16px; font-size: 1.05rem;">Send to Gmail & Complete Checkout</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

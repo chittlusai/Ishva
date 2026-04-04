@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishva | About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .about-header { text-align: center; padding: 80px 20px 40px; }
+        .about-header h1 { font-family: var(--font-heading); font-size: 3.5rem; margin-bottom: 20px; background: linear-gradient(135deg, white, var(--text-secondary)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+        .feature-grid { max-width: 1000px; margin: 60px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 0 20px; }
+        .feature-card { padding: 40px; border-radius: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.01); }
+        .feature-card i { width: 48px; height: 48px; color: var(--accent-1); margin-bottom: 20px; }
+    </style>
+</head>
+<body class="dark-theme">
+    <div id="lights" class="ambient-lights">
+        <div class="light-orb orb-1"></div>
+        <div class="light-orb orb-2"></div>
+    </div>
+    
+    <nav class="navbar glass" style="position: sticky; z-index: 100;">
+        <div class="logo"><a href="index.html" style="text-decoration:none;"><span class="logo-text">Ishva</span></a></div>
+        <div class="nav-links" style="display: flex; align-items: center; gap: 30px;">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html">About Us</a>
+            <a href="process.html">Process</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html" class="btn btn-primary glow-effect" style="padding: 8px 20px; font-size: 0.85rem;">Get Quote</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="about-header">
+            <h1>Engineered for Excellence</h1>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem;">Ishva is not just a web design agency. We are an architecture firm for the digital age, specializing in immersive WebGL, 3D interactivity, and uncompromised structural performance.</p>
+        </section>
+
+        <section class="feature-grid">
+            <div class="feature-card glass-panel" data-tilt>
+                <i data-lucide="shield-check"></i>
+                <h3 style="margin-bottom: 15px; font-family: var(--font-heading);">Bulletproof Security</h3>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Our multi-page ecosystems run isolated backend environments, ensuring zero-trust capabilities and comprehensive lead safeguarding.</p>
+            </div>
+            <div class="feature-card glass-panel" data-tilt>
+                <i data-lucide="zap"></i>
+                <h3 style="margin-bottom: 15px; font-family: var(--font-heading);">Lightning Speed</h3>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">No bloated frameworks. We craft bespoke architectures optimized to score 99+ on Lighthouse metrics globally.</p>
+            </div>
+            <div class="feature-card glass-panel" data-tilt>
+                <i data-lucide="gem"></i>
+                <h3 style="margin-bottom: 15px; font-family: var(--font-heading);">Premium Aesthetics</h3>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Glassmorphism, dark-mode gradients, and kinetic motion tracking ensure your platform feels alive and authoritative.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

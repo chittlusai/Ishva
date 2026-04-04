@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishva | Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .contact-header { text-align: center; padding: 80px 20px 40px; }
+        .contact-header h1 { font-family: var(--font-heading); font-size: 3.5rem; margin-bottom: 20px; background: linear-gradient(135deg, white, var(--text-secondary)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+        .form-container { max-width: 600px; margin: 0 auto; padding: 40px; border-radius: 20px; border: 1px solid var(--border-glass); background: rgba(255,255,255,0.02); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body class="dark-theme">
+    <div id="lights" class="ambient-lights">
+        <div class="light-orb orb-1"></div>
+        <div class="light-orb orb-2"></div>
+    </div>
+    
+    <nav class="navbar glass" style="position: sticky; z-index: 100;">
+        <div class="logo"><a href="index.html" style="text-decoration:none;"><span class="logo-text">Ishva</span></a></div>
+        <div class="nav-links" style="display: flex; align-items: center; gap: 30px;">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html">About Us</a>
+            <a href="process.html">Process</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html" class="btn btn-primary glow-effect" style="padding: 8px 20px; font-size: 0.85rem;">Get Quote</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="contact-header">
+            <h1>Start the Conversation</h1>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem;">Whether you want a custom architecture mapping or general inquiries, shoot us a direct connection below.</p>
+        </section>
+
+        <section style="padding: 0 20px 80px;">
+            <div class="form-container glass-panel">
+                <form id="contact-form" action="https://formsubmit.co/vanapalligowtham890@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="Ishva Inbound Contact Form">
+                    <!-- Standard redirect URL parameter will be injected -->
+                    <input type="hidden" name="_next" id="form-redirect-handler">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div class="input-group" style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; color: var(--text-secondary); font-size: 0.9rem;">Client Mail</label>
+                        <input type="email" name="Client_Mail" required style="width: 100%; padding: 15px; border-radius: 8px; background: rgba(0,0,0,0.5); border: 1px solid var(--border-glass); color: white; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='var(--accent-1)'" onblur="this.style.borderColor='var(--border-glass)'" placeholder="you@company.com">
+                    </div>
+                    <div class="input-group" style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; color: var(--text-secondary); font-size: 0.9rem;">Client Phone</label>
+                        <div style="display: flex; gap: 10px;">
+                            <select id="contact-country-code" style="padding: 15px; border-radius: 8px; border: 1px solid var(--border-glass); background:rgba(0,0,0,0.5); color:white; outline:none; font-family: var(--font-body); cursor: pointer;">
+                                <option value="+1" data-len="10">🇺🇸 +1</option>
+                                <option value="+44" data-len="10,11">🇬🇧 +44</option>
+                                <option value="+91" data-len="10" selected>🇮🇳 +91</option>
+                                <option value="+61" data-len="9">🇦🇺 +61</option>
+                                <option value="+971" data-len="9">🇦🇪 +971</option>
+                                <option value="+65" data-len="8">🇸🇬 +65</option>
+                                <option value="+49" data-len="10,11">🇩🇪 +49</option>
+                            </select>
+                            <input type="tel" id="contact-phone-input" required style="flex: 1; padding: 15px; border-radius: 8px; background: rgba(0,0,0,0.5); border: 1px solid var(--border-glass); color: white; outline: none; transition: border-color 0.3s;" placeholder="9876543210">
+                            <!-- Hidden input maps to FormSubmit -->
+                            <input type="hidden" name="Client_Phone" id="final-contact-phone-val">
+                        </div>
+                    </div>
+                    <div class="input-group" style="margin-bottom: 30px;">
+                        <label style="display: block; margin-bottom: 8px; color: var(--text-secondary); font-size: 0.9rem;">Client Requirement / Customizable Note</label>
+                        <textarea name="Client_Requirement" rows="6" required style="width: 100%; padding: 15px; border-radius: 8px; background: rgba(0,0,0,0.5); border: 1px solid var(--border-glass); color: white; outline: none; resize: vertical; transition: border-color 0.3s;" onfocus="this.style.borderColor='var(--accent-1)'" onblur="this.style.borderColor='var(--border-glass)'" placeholder="Describe your business and what you want to make with us..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 glow-effect" style="padding: 16px; font-size: 1.1rem;" id="contact-submit-btn">Send Message Request</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script>
+        lucide.createIcons();
+        document.getElementById('form-redirect-handler').value = window.location.href; 
+
+        const contactForm = document.getElementById('contact-form');
+        const phoneInput = document.getElementById('contact-phone-input');
+        const countrySelect = document.getElementById('contact-country-code');
+        const finalPhoneHidden = document.getElementById('final-contact-phone-val');
+        const submitBtn = document.getElementById('contact-submit-btn');
+
+        contactForm.addEventListener('submit', function(e) {
+            // Validate Phone Length Before Allowing Form Dispatch
+            const selectedOption = countrySelect.options[countrySelect.selectedIndex];
+            const allowedLengths = selectedOption.getAttribute('data-len').split(',').map(n => parseInt(n));
+            const pureNumber = phoneInput.value.replace(/\D/g, ''); // Extract numericals exclusively
+
+            if (!allowedLengths.includes(pureNumber.length)) {
+                e.preventDefault(); // Suspend network call
+                phoneInput.style.borderColor = 'red';
+                phoneInput.parentElement.classList.add('error-shake');
+                setTimeout(() => phoneInput.parentElement.classList.remove('error-shake'), 400);
+                alert(`Invalid phone number length. It must be ${allowedLengths.join(' or ')} digits for this country.`);
+                return false;
+            }
+
+            // Bind concatenated code + number strictly into the hidden FormSubmit Payload
+            finalPhoneHidden.value = countrySelect.value + " " + pureNumber;
+            submitBtn.innerText = 'Routing Message Securely...';
+        });
+
+        phoneInput.addEventListener('input', () => { phoneInput.style.borderColor = 'var(--border-glass)'; });
+    </script>
+</body>
+</html>

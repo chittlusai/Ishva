@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishva | Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="dark-theme">
+    <div id="lights" class="ambient-lights">
+        <div class="light-orb orb-1"></div>
+        <div class="light-orb orb-2"></div>
+        <div class="light-orb orb-3"></div>
+    </div>
+    
+    <nav class="navbar glass" style="position: sticky; z-index: 100;">
+        <div class="logo"><span class="logo-text">Ishva</span></div>
+        <div class="nav-links" style="display: flex; align-items: center; gap: 30px;">
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html">About Us</a>
+            <a href="process.html">Process</a>
+            <a href="contact.html">Contact</a>
+            <div class="user-profile" style="display: flex; align-items: center; gap: 12px; padding: 6px 12px; border-radius: 30px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+                <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem; font-family: var(--font-heading);">👤</div>
+                <div style="text-align: left; line-height: 1.2;">
+                    <div id="checkout-user-name-display" style="font-size: 0.95rem; color: white; font-family: var(--font-heading); letter-spacing: 0.5px;">Guest</div>
+                </div>
+            </div>
+            <a href="index.html" class="btn btn-secondary" style="padding: 8px 20px; font-size: 0.85rem;">Log Out</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="checkout-section" style="max-width: 600px; margin: 100px auto;">
+            <h2 class="section-title">Order Checkout</h2>
+            <div class="glass-panel" style="padding: 40px;">
+                <h3 style="margin-bottom: 20px;">Review Order Summary</h3>
+                <div id="checkout-summary" style="margin-bottom: 24px; color: var(--text-secondary); background: rgba(0,0,0,0.3); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); font-family: var(--font-body); line-height: 1.8;">
+                    Loading order...
+                </div>
+                <h3 style="margin-bottom: 20px;">Payment Simulation</h3>
+                <div class="input-group" style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom: 8px; color: var(--text-secondary); font-size: 0.9rem;">Card Number (Dummy Input)</label>
+                    <input type="text" placeholder="0000 0000 0000 0000" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-glass); background:rgba(255,255,255,0.02); color:white; outline:none; font-size: 1rem;">
+                </div>
+                <button class="btn btn-primary w-100 glow-effect" id="pay-btn" style="padding: 16px;">Process Payment</button>
+            </div>
+        </section>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>
