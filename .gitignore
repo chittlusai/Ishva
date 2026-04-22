@@ -30,3 +30,8 @@ yarn-error.log*
 
 # vercel
 .vercel
+node_modules/
+.next/
+frontend/.next/
+backend/venv/
+__pycache__/
