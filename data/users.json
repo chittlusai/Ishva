@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1776855737978",
+    "createdAt": "2026-04-22T11:02:17.978Z",
+    "name": "John Doe",
+    "email": "john@example.com",
+    "phone": "+91 9999999999",
+    "businessName": "Vanguard Tech",
+    "websiteType": "SaaS",
+    "budget": "₹1L - ₹5L",
+    "features": [
+      "Payments",
+      "User Login"
+    ]
+  }
+]
